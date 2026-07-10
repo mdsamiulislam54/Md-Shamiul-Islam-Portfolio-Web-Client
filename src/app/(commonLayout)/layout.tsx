@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter, Montserrat } from "next/font/google";
-import "./(commonLayout)/globals.css";
+import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
-import { Toaster } from "sonner";
+import Navbar from "@/components/layout/navbar";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat-sans",
@@ -41,8 +41,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           
+          <Navbar/>
           {children}
-          <Toaster position="top-right"/>
         </ThemeProvider>
       </body>
 

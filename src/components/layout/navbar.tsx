@@ -5,19 +5,24 @@ import { useTheme } from "next-themes";
 import { Code2, Download, Menu, Moon, Sun } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "@/components/ui/button";
+import {  buttonVariants } from "@/components/ui/button";
 import {
     Sheet,
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { ModeToggle } from "../provider/modeToggle";
+import { Container } from "../provider/container";
 
 
 const navLinks = [
     {
         title: "Home",
         href: "#home",
+    },
+    {
+        title: "Education",
+        href: "#",
     },
     {
         title: "About",
@@ -38,25 +43,20 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-    const { theme, setTheme } = useTheme();
-
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-    };
-
     return (
         <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
-            <div className="container mx-auto flex h-16 items-center justify-between">
+            <Container>
+            <div className="flex h-16 items-center justify-between">
                 {/* Logo */}
                 <Link
                     href="/"
                     className="flex items-center gap-3"
                 >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                    <div className="  flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                         <Code2 className="h-5 w-5" />
                     </div>
 
-                    <span className="hidden text-lg font-bold sm:block">
+                    <span className="hidden text-lg font-bold font-mono sm:block">
                         Shamiul
                     </span>
                 </Link>
@@ -91,21 +91,20 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile */}
-                <div className="flex items-center gap-2 lg:hidden">
+                <div className="flex items-center gap-2 lg:hidden ">
 
                     <ModeToggle />
 
                     <Sheet>
                         <SheetTrigger >
                             <div
-                                // variant="outline"
-                                // size="icon"
+                        
                             >
                                 <Menu className="h-5 w-5" />
                             </div>
                         </SheetTrigger>
 
-                        <SheetContent side="right" className="w-80">
+                        <SheetContent side="right" className="w-80 p-4">
                             <div className="mt-10 flex flex-col gap-6">
                                 {navLinks.map((item) => (
                                     <Link
@@ -135,6 +134,7 @@ export default function Navbar() {
                     </Sheet>
                 </div>
             </div>
+            </Container>
         </header>
     );
 }
