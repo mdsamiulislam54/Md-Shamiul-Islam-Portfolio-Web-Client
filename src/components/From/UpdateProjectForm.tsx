@@ -10,22 +10,29 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Field } from "../ui/field";
 import { toast } from "sonner";
+import { IProjectPayload } from "@/app/(dashboardLayout)/admin/project/_actions";
+import Image from "next/image";
 
-const UpdateProjectForm = () => {
+interface UpdateProjectFromProps {
+    project: IProjectPayload
+}
+
+const UpdateProjectForm = ({ project }: UpdateProjectFromProps) => {
+
     const [loading, setLoading] = useState(false)
     const [formData, setFromData] = useState({
-        name: "",
-        order: 0,
-        tech: "",
-        feature: "",
-        shortDesc: "",
-        description: "",
-        clientRepo: "",
-        serverRepo: "",
-        liveUrl: "",
+        name: project.name,
+        order: project.order,
+        tech: String(project.tech),
+        feature: String(project.feature),
+        shortDesc: project.shortDesc,
+        description: project.description,
+        clientRepo: project.clientRepo,
+        serverRepo: project.serverRepo,
+        liveUrl: project.liveUrl,
         thumbnail: null as File | null,
-        isFeatured: false,
-        isPublished: true,
+        isFeatured: project.isFeatured as boolean,
+        isPublished: project.isPublished as boolean
     });
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -98,13 +105,13 @@ const UpdateProjectForm = () => {
 
 
             setLoading(true)
-            const res = await fetch(`http://localhost:8000/api/v1/project`, {
-                method: "POST",
+            const res = await fetch(`http://localhost:8000/api/v1/project/${project.id}`, {
+                method: "PATCH",
                 body: body
             })
             const data = await res.json()
             if (res.ok) {
-                toast.success("Project Create Successful")
+                toast.success("Project Update Successful")
             }
 
             if (!res.ok) {
@@ -113,7 +120,7 @@ const UpdateProjectForm = () => {
 
         } catch (error) {
             console.log(error)
-            toast.error("Project Create Failed")
+            toast.error("Project Update Failed")
         } finally {
             setLoading(false)
         }
@@ -122,6 +129,7 @@ const UpdateProjectForm = () => {
 
     return (
         <Card className="max-w-6xl mx-auto">
+
             <CardHeader>
                 <CardTitle>Create Project</CardTitle>
             </CardHeader>
@@ -184,6 +192,7 @@ const UpdateProjectForm = () => {
                             <Label>Live URL</Label>
                             <Input
                                 name="liveUrl"
+                                value={formData.liveUrl}
                                 placeholder="https://..."
                                 required
                                 onChange={handleChange}
@@ -200,6 +209,20 @@ const UpdateProjectForm = () => {
                                     accept="image/*"
                                     onChange={handleFileChange}
                                 />
+
+                                {
+                                    project.thumbnail && <div>
+                                        <Image
+                                        src={project.thumbnail}
+                                        alt="project"
+                                        width={100}
+                                        height={100}
+
+
+
+                                        />
+                                    </div>
+                                }
                             </Field>
                         </div>
                     </div>
@@ -297,7 +320,7 @@ const UpdateProjectForm = () => {
                         className="w-full"
                     >
                         {
-                            loading ? "Creating Project..." : "Create Project"
+                            loading ? "Updating Project..." : "Update Project"
                         }
                     </Button>
                 </form>

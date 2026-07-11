@@ -29,12 +29,23 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { SiGithub } from "react-icons/si";
+import { useRouter } from "next/navigation";
 
 interface IProjectTableProps {
     data: IProjectPayload[];
 }
 
 const ProjectTable = ({ data }: IProjectTableProps) => {
+
+    const router = useRouter()
+
+    const update = (id: string) => {
+        router.push(`/admin/update_project/${id}`);
+    };
+
+
+
+
     return (
         <div className="overflow-hidden rounded-xl border bg-background">
             <Table>
@@ -84,7 +95,7 @@ const ProjectTable = ({ data }: IProjectTableProps) => {
 
                             <TableCell>
                                 <div className="flex max-w-xs flex-wrap gap-1">
-                                    {project.tech.map((tech:string) => (
+                                    {project.tech.map((tech: string) => (
                                         <Badge key={tech} variant="outline">
                                             {tech.trim()}
                                         </Badge>
@@ -133,7 +144,7 @@ const ProjectTable = ({ data }: IProjectTableProps) => {
                                     </DropdownMenuTrigger>
 
                                     <DropdownMenuContent align="end">
-                                        <DropdownMenuItem>
+                                        <DropdownMenuItem onClick={() => update(project.id)}>
                                             <Pencil className="mr-2 h-4 w-4" />
                                             Update
                                         </DropdownMenuItem>
