@@ -294,7 +294,7 @@ const CreateProjectForm = () => {
 
                     <Button
                         type="submit"
-                        className="w-full"
+                        className="w-full cursor-pointer"
                     >
                         {
                             loading ? "Creating Project..." : "Create Project"

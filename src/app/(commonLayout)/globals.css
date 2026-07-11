@@ -112,6 +112,7 @@
   }
   body {
      font-family: var(--font-inter);
+     scroll-behavior: smooth;
     @apply bg-background text-foreground;
   }
 
