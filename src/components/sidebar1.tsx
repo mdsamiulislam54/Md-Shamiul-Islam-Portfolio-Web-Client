@@ -74,6 +74,19 @@ const sidebarData: SidebarData = {
           href: "/admin/profile",
           isActive: true,
         },
+        {
+          label: "Create Project",
+          icon: LayoutDashboard,
+          href: "/admin/project",
+          isActive: true,
+        },
+        {
+          label: "View Project",
+          icon: LayoutDashboard,
+          href: "/admin/view_project",
+          isActive: true,
+        },
+       
  
   
       ],

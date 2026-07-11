@@ -87,11 +87,12 @@ const CreateProfileFrom = () => {
                 body.append("file", formData.file);
             }
             console.log(body)
+           
             setLoading(true)
-            await fetch(`http://localhost:8000/api/v1/hero`, {
-                method: "POST",
-                body: body
-            })
+            // await fetch(`http://localhost:8000/api/v1/hero`, {
+            //     method: "POST",
+            //     body: body
+            // })
 
             toast.success("Profile Create Successful")
 
@@ -103,7 +104,7 @@ const CreateProfileFrom = () => {
         } finally {
             setLoading(false)
         }
-        console.log(formData)
+      
     }
 
     return (
