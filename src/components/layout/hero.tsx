@@ -49,26 +49,26 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
     ];
     return (
 
-        <div>
-            <div className="grid items-center gap-12 lg:grid-cols-2 py-10">
+        <div className="">
+            <div className="grid items-center gap-12 lg:grid-cols-2 py-10 relative">
                 {/* Left Content */}
                 <div className="space-y-6 text-center lg:text-left">
 
-                    <h3 className="text-lg font-medium font-mono ">
+                    <h3 className="text-[4vw] font-medium font-mono ">
                         {data.title.split(".")[0]}
                     </h3>
 
-                    <h3 className="text-2xl font-medium ">
+                    <h3 className="text-[2.5vw] font-mono font-medium ">
                         <Typewriter
                             options={{
-                                strings: [data.title.split(".")[1], "Frontend Web Developer","Backend Developer"],
+                                strings: [data.title.split(".")[1], "Frontend Web Developer", "Backend Developer"],
                                 autoStart: true,
                                 loop: true,
                             }}
                         />
                     </h3>
 
-                    <h2 className="text-sm font-mono font-semibold text-muted-foreground sm:text-sm">
+                    <h2 className="text-sm  font-semibold text-muted-foreground sm:text-md">
                         {data.subtitle}
                     </h2>
 
@@ -86,22 +86,24 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                             View Projects
                         </Button>
                     </div>
-                    <div className="flex items-center gap-4">
-                        {socialIcons.map((item) => {
-                            const Icon = item.icon;
+                    <div className=" absolute top-[50%] translate-y-[-50%] right-0 overflow-hidden z-20 ">
+                        <div className="flex  flex-col items-center gap-12 z-1 my-4">
+                            {socialIcons.map((item) => {
+                                const Icon = item.icon;
 
-                            return (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-12 w-12 items-center justify-center rounded-full border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-primary-foreground"
-                                >
-                                    <Icon className="text-xl" />
-                                </Link>
-                            );
-                        })}
+                                return (
+                                    <Link
+                                        key={item.name}
+                                        href={item.href}
+                                        target="_blank"
+
+                                        className="flex h-12 w-12 items-center justify-center rounded-full border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-primary-foreground cursor-pointer animate-pulse"
+                                    >
+                                        <Icon className="text-xl" />
+                                    </Link>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
 

@@ -54,9 +54,9 @@ const Project = ({ project }: IProjectProps) => {
                     {project.map((item) => (
                         <CarouselItem
                             key={item.id}
-                            className="md:basis-1/2 xl:basis-1/3 "
+                            className="md:basis-1/2 xl:basis-1/3 my-10"
                         >
-                            <Card className="group overflow-hidden rounded-2xl  transition-all duration-300 hover:cursor-pointer  p-0 ">
+                            <Card className="group overflow-hidden rounded-2xl  transition-all duration-300 hover:cursor-pointer shadow-2xl  p-0 ">
                                 <div className="relative aspect-video overflow-hidden ">
                                     <Image
                                         src={item.thumbnail}
