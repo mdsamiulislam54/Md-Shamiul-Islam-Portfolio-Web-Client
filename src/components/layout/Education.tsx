@@ -96,9 +96,9 @@ export default function EducationCards() {
                     {cards.map((card) => (
                         <CarouselItem
                             key={card.id}
-                            className="pl-4 basis-full md:basis-1/2 xl:basis-1/3"
+                            className="pl-4 basis-full md:basis-1/2 xl:basis-1/3 "
                         >
-                            <Card className="group flex h-full flex-col overflow-hidden transition-all duration-300 shadow-xl cursor-pointer hover:border-primary/50 hover:shadow-xl">
+                            <Card className="group flex h-full flex-col overflow-hidden transition-all duration-300 shadow-xl cursor-pointer hover:border-primary/50 hover:shadow-xl rounded-3xl border bg-gradient-to-br from-background via-background to-primary/10">
                                 <CardHeader>
                                     <div className="flex items-center justify-between">
                                         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">

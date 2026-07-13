@@ -18,7 +18,7 @@ import { Container } from "../provider/container";
 const navLinks = [
     {
         title: "Home",
-        href: "#home",
+        href: "/",
     },
     {
         title: "Education",
@@ -26,7 +26,7 @@ const navLinks = [
     },
     {
         title: "About",
-        href: "#about",
+        href: "/about",
     },
     {
         title: "Projects",

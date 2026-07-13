@@ -86,6 +86,13 @@ const sidebarData: SidebarData = {
           href: "/admin/view_project",
           isActive: true,
         },
+        {
+          label: "About",
+          icon: LayoutDashboard,
+          href: "/admin/about",
+          isActive: true,
+        },
+     
        
  
   

@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <main>
-      <section>
+      <section className="overflow-hidden rounded-3xl border bg-gradient-to-br from-background via-background to-primary/50">
         <Container>
           <HeroPage data={hero.data} />
         </Container>

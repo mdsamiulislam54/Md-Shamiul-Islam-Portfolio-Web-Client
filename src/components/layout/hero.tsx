@@ -50,6 +50,7 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
     return (
 
         <div className="">
+
             <div className="grid items-center gap-12 lg:grid-cols-2 py-10 relative">
                 {/* Left Content */}
                 <div className="space-y-6 text-center lg:text-left order-2 md:order-1">
@@ -58,7 +59,7 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                         {data.title.split(".")[0]}
                     </h3>
 
-                    <h3 className="md:text-[1vw] font-mono font-medium ">
+                    <h3 className="max-md:text-[1vw] text-2xl font-mono font-medium ">
                         <Typewriter
                             options={{
                                 strings: [data.title.split(".")[1], "Frontend Web Developer", "Backend Developer"],
@@ -68,7 +69,7 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                         />
                     </h3>
 
-                    <h2 className="text-sm  font-semibold text-muted-foreground sm:text-md">
+                    <h2 className="text-sm   text-muted-foreground sm:text-md">
                         {data.subtitle}
                     </h2>
 
