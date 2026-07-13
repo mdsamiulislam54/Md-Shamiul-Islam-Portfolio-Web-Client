@@ -86,7 +86,7 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                             View Projects
                         </Button>
                     </div>
-                    <div className=" absolute top-[50%] translate-y-[-50%] right-0 overflow-hidden z-20 ">
+                    <div className=" absolute lg:top-[50%] top-[25%] translate-y-[-50%] right-0 overflow-hidden z-20 ">
                         <div className="flex  flex-col items-center gap-12 z-1 my-4">
                             {socialIcons.map((item) => {
                                 const Icon = item.icon;
@@ -112,7 +112,7 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                     {/* Background Blur */}
 
 
-                    <div className="relative w-100 h-100">
+                    <div className="relative w-100 h-100 max-lg:overflow-hidden">
                         <Image
                             src={data.profileImages}
                             alt={data.fullName}

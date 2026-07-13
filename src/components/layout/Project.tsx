@@ -32,8 +32,8 @@ const Project = ({ project }: IProjectProps) => {
     return (
 
         <div className="">
-            <div className="mb-12 text-center">
-                <h2 className="text-4xl font-bold">
+            <div className="mb-6 text-center">
+                <h2 className="lg:text-4xl text-xl font-bold font-mono">
                     Featured Projects
                 </h2>
 
