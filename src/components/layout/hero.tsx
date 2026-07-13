@@ -52,13 +52,13 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
         <div className="">
             <div className="grid items-center gap-12 lg:grid-cols-2 py-10 relative">
                 {/* Left Content */}
-                <div className="space-y-6 text-center lg:text-left">
+                <div className="space-y-6 text-center lg:text-left order-2 md:order-1">
 
-                    <h3 className="text-[4vw] font-medium font-mono ">
+                    <h3 className="md:text-[3vw] text-2xl font-medium font-mono ">
                         {data.title.split(".")[0]}
                     </h3>
 
-                    <h3 className="text-[2.5vw] font-mono font-medium ">
+                    <h3 className="md:text-[1vw] font-mono font-medium ">
                         <Typewriter
                             options={{
                                 strings: [data.title.split(".")[1], "Frontend Web Developer", "Backend Developer"],
@@ -108,7 +108,7 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                 </div>
 
                 {/* Right Image */}
-                <div className="relative flex justify-center  ">
+                <div className="relative flex justify-center order-1 md:order-2 ">
                     {/* Background Blur */}
 
 
