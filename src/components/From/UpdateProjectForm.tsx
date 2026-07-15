@@ -82,7 +82,7 @@ const UpdateProjectForm = ({ project }: UpdateProjectFromProps) => {
                 "feature",
                 JSON.stringify(
                     formData.feature
-                        .split(",")
+                        .split("/n")
                         .map((item) => item.trim())
                         .filter(Boolean)
                 )

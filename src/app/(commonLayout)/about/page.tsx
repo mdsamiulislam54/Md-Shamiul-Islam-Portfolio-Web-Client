@@ -103,7 +103,7 @@ export default async function AboutPage() {
 
     return (
         <section className="">
-            <section className="relative overflow-hidden rounded-3xl  bg-gradient-to-br from-background via-background to-primary/5 px-8 py-20 mb-4">
+            <section className="relative overflow-hidden rounded-3xl  bg-gradient-to-br from-background via-background to-primary/5 px-8 py-2  mb-4">
 
                 {/* Glow */}
                 <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />
@@ -119,13 +119,11 @@ export default async function AboutPage() {
                         About Me
                     </Badge>
 
-                    <h1 className="text-5xl md:text-6xl font-bold tracking-tight font-mono">
-                        Building Modern
-                        <br />
-                        Web Experiences.
+                    <h1 className="text-2xl md:text-3xl font-bold tracking-tight font-mono">
+                        Building Modern Web Experiences.
                     </h1>
 
-                    <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-8">
+                    <p className="mx-auto mt-6 max-w-2xl  text-muted-foreground text-sm leading-5">
                         Passionate Full Stack Developer focused on creating scalable,
                         responsive and user-friendly digital products.
                     </p>
