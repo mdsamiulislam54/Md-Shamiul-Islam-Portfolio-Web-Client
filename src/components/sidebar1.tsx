@@ -98,6 +98,12 @@ const sidebarData: SidebarData = {
           href: "/admin/skill",
           isActive: true,
         },
+        {
+          label: "Contact",
+          icon: LayoutDashboard,
+          href: "/admin/message",
+          isActive: true,
+        },
 
 
 

@@ -2,8 +2,8 @@
 
 import httpClient from "@/config/axios";
 
-interface IProfileFormData {
-    id:string
+ export interface IProfileFormData {
+    id: string
     fullName: string;
     title: string;
     subtitle: string;
@@ -22,7 +22,13 @@ interface IProfileFormData {
     twitter: string;
     facebook: string;
 }
-
+export interface IDashboardOverview {
+    totalProjects: number;
+    featuredProjects: number;
+    totalSkills: number;
+    totalMessages: number;
+    unreadMessages: number;
+}
 export const getProfileData = async () => {
     try {
         const res = await httpClient.get(`/hero`,)
@@ -32,3 +38,14 @@ export const getProfileData = async () => {
         throw new Error("Get Profile Data failed")
     }
 }
+
+export const getDashboardOverview = async () => {
+    try {
+        const res = await httpClient.get("/dashboard");
+
+        return res.data.data as IDashboardOverview;
+    } catch (error) {
+        console.log(error);
+        throw new Error("Get Dashboard Overview failed");
+    }
+};

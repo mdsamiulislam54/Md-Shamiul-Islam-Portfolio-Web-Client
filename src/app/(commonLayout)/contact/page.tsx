@@ -8,8 +8,6 @@ import {
     FaGithub,
     FaLinkedin,
     FaFacebook,
-    FaLocationPin,
-    FaLocationArrow,
 } from "react-icons/fa6";
 
 const ContactPage = async () => {
@@ -45,9 +43,9 @@ const ContactPage = async () => {
 
             </section>
             <Container>
-                <div className="grid gap-1 lg:grid-cols-2">
+                <div className="grid gap-1 lg:grid-cols-2 items-stretch my-10">
                     {/* Contact Info */}
-                    <div className="space-y-8  bg-card p-4">
+                    <div className="space-y-8  bg-card p-4 h-full">
                         <div>
                             <h2 className="text-3xl font-bold font-mono">Get In Touch</h2>
                             <p className="mt-3 text-muted-foreground">
@@ -88,7 +86,7 @@ const ContactPage = async () => {
                                     <Phone className="h-5 w-5" />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-muted-foreground">Phone</p>
+                                    <p className="text-sm text-muted-foreground">Phone & WhatsApp </p>
                                     <Link
                                         href="tel:+8801XXXXXXXXX"
                                         className="font-medium hover:text-primary"
@@ -148,7 +146,7 @@ const ContactPage = async () => {
                     </div>
 
                     {/* Contact Form */}
-                    <div>
+                    <div className='h-full'>
                         <ContactFrom />
                     </div>
                 </div>

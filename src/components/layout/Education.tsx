@@ -73,7 +73,7 @@ export default function EducationCards() {
     ];
 
     return (
-        <section className="">
+        <div >
             <div className="mx-auto max-w-3xl text-center">
                 <h2 className="lg:text-4xl text-xl font-bold tracking-tight font-mono">
                     Education & Training
@@ -90,9 +90,9 @@ export default function EducationCards() {
                     align: "start",
                     loop: true,
                 }}
-                className="mt-14 w-full"
+                className=" w-full"
             >
-                <CarouselContent className="-ml-4 my-10">
+                <CarouselContent className="-ml-4 mb-4">
                     {cards.map((card) => (
                         <CarouselItem
                             key={card.id}
@@ -157,6 +157,6 @@ export default function EducationCards() {
                 <CarouselPrevious className="-left-5" />
                 <CarouselNext className="-right-5" />
             </Carousel>
-        </section>
+        </div>
     );
 }

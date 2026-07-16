@@ -55,7 +55,7 @@ export default async function Home() {
       </section>
       <section className="py-20 lg:py-28">
         <Container>
-          <ContactPage />
+          <ContactPage profile={hero} />
         </Container>
       </section>
     </main>

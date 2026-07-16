@@ -10,6 +10,7 @@ import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
+import { createMessage } from "@/app/(commonLayout)/contact/_actions";
 
 const ContactFrom = () => {
   const [loading, setLoading] = useState(false);
@@ -30,24 +31,31 @@ const ContactFrom = () => {
     }));
   };
 
-  const handleSubmit = async(e:React.SubmitEvent<HTMLFormElement>)=>{
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-        setLoading(true)
-        console.log(formData)
+      setLoading(true)
+      await createMessage(formData)
+      toast.success("Message Send Successfully")
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
     } catch (error) {
-        console.error(error)
-        toast.error("Message Send Failed!")
-        throw error
-    }finally{
-        setLoading(false)
+      console.error(error)
+      toast.error("Message Send Failed!")
+      throw error
+    } finally {
+      setLoading(false)
     }
   }
 
 
   return (
-    <div className="rounded-2xl border bg-card p-8 shadow-sm">
+    <div className="rounded-2xl border bg-card p-8 shadow-sm h-full">
       <div className="mb-8">
         <h2 className="text-2xl font-bold">Send a Message</h2>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -56,34 +64,37 @@ const ContactFrom = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <Field>
-          <Label htmlFor="name">Full Name</Label>
-          <Input
-            id="name"
-            name="name"
-            type="text"
-            autoComplete="name"
-            placeholder="Enter Your Name..."
-            value={formData.name}
-            className="py-6"
-            onChange={handleChange}
-            required
-          />
-        </Field>
+        <div className="grid md:grid-cols-2 gap-2">
+          <Field>
+            <Label htmlFor="name">Full Name</Label>
+            <Input
+              id="name"
+              name="name"
+              type="text"
+              autoComplete="name"
+              placeholder="Enter Your Name..."
+              value={formData.name}
+              className="py-6  border-b-primary "
+              onChange={handleChange}
+              required
+            />
+          </Field>
 
-        <Field>
-          <Label htmlFor="email">Email Address</Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="john@example.com"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </Field>
+          <Field>
+            <Label htmlFor="email">Email Address</Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              placeholder="john@example.com"
+              value={formData.email}
+              className="py-6  border-b-primary "
+              onChange={handleChange}
+              required
+            />
+          </Field>
+        </div>
 
         <Field>
           <Label htmlFor="subject">Subject</Label>
@@ -93,6 +104,7 @@ const ContactFrom = () => {
             type="text"
             placeholder="Project Discussion"
             value={formData.subject}
+            className="py-6  border-b-primary "
             onChange={handleChange}
             required
           />
@@ -106,6 +118,7 @@ const ContactFrom = () => {
             rows={7}
             placeholder="Write your message here..."
             value={formData.message}
+            className="py-6  border-b-primary "
             onChange={handleChange}
             required
           />
