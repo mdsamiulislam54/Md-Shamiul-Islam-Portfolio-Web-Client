@@ -74,7 +74,7 @@ export default function EducationCards() {
 
     return (
         <div >
-            <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto max-w-3xl text-center mb-14">
                 <h2 className="lg:text-4xl text-xl font-bold tracking-tight font-mono">
                     Education & Training
                 </h2>

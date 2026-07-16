@@ -21,14 +21,6 @@ const navLinks = [
         href: "/",
     },
     {
-        title: "Education",
-        href: "#",
-    },
-    {
-        title: "Skills",
-        href: "/skill",
-    },
-    {
         title: "About",
         href: "/about",
     },
@@ -37,8 +29,18 @@ const navLinks = [
         href: "#projects",
     },
     {
+        title: "Education",
+        href: "#education",
+    },
+    {
+        title: "Skills",
+        href: "/skill",
+    },
+
+
+    {
         title: "Services",
-        href: "#services",
+        href: "/services",
     },
     {
         title: "Contact",

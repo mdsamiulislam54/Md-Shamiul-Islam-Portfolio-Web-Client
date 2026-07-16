@@ -3,6 +3,7 @@ import { Geist_Mono, Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/Footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
           
           <Navbar/>
           {children}
+          <Footer/>
         </ThemeProvider>
       </body>
 

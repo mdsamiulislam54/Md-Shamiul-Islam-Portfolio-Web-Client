@@ -9,6 +9,9 @@ import About from "@/components/layout/About";
 import { getAbout } from "../(dashboardLayout)/admin/about/_actions";
 import Skills from "@/components/layout/Skills";
 import { getSkill } from "../(dashboardLayout)/admin/skill/_actions";
+import GitHub from "@/components/layout/GitHub";
+import Footer from "@/components/layout/Footer";
+import Service from "@/components/layout/Service";
 
 
 export default async function Home() {
@@ -43,11 +46,27 @@ export default async function Home() {
           <Skills skill={skills} />
         </Container>
       </section>
+      <section className="py-20 lg:py-20">
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-4xl font-bold font-mono">
+              Services I Provide
+            </h2>
+
+            <p className="mt-4 text-muted-foreground">
+              Professional web development services focused on quality,
+              performance, and scalable solutions.
+            </p>
+          </div>
+          <Service />
+        </Container>
+      </section>
       <section id="skills" className="py-20 lg:py-20">
         <Container>
           <Project project={project} />
         </Container>
       </section>
+
       <section className="py-20 lg:py-28">
         <Container>
           <EducationCards />
@@ -58,6 +77,12 @@ export default async function Home() {
           <ContactPage profile={hero} />
         </Container>
       </section>
+      <section className="">
+        <Container>
+          <GitHub />
+        </Container>
+      </section>
+
     </main>
   )
 }
