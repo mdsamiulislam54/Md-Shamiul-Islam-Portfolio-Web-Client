@@ -3,6 +3,7 @@
 import httpClient from "@/config/axios";
 
 interface IProfileFormData {
+    id:string
     fullName: string;
     title: string;
     subtitle: string;

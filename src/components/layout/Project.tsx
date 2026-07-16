@@ -78,10 +78,10 @@ const Project = ({ project }: IProjectProps) => {
 
                                     <Dialog>
                                         <DialogTrigger >
-                                            <Button variant={"outline"} size="sm" className="flex-1 cursor-pointer ">
+                                            <span  className="flex items-center gap-3 cursor-pointer border p-1 ">
                                                 <ArrowUpRight className="ml-2 h-4 w-4" />
                                                 Details
-                                            </Button>
+                                            </span>
                                         </DialogTrigger>
 
                                         <DialogContent className="!max-w-6xl !w-[95vw] !max-h-[90vh] overflow-y-auto p-0">

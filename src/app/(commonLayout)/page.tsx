@@ -7,13 +7,16 @@ import EducationCards from "@/components/layout/Education";
 import ContactPage from "@/components/layout/Contact";
 import About from "@/components/layout/About";
 import { getAbout } from "../(dashboardLayout)/admin/about/_actions";
+import Skills from "@/components/layout/Skills";
+import { getSkill } from "../(dashboardLayout)/admin/skill/_actions";
 
 
 export default async function Home() {
-  const [hero, project,about] = await Promise.all([
+  const [hero, project, about, skills] = await Promise.all([
     getProfileData(),
     getAllProject(),
-    getAbout()
+    getAbout(),
+    getSkill()
   ])
 
 
@@ -26,10 +29,21 @@ export default async function Home() {
       </section>
       <section className="py-20 lg:py-20">
         <Container>
-          <About about={about} profileImage={hero.profileImages}/>
+          <About about={about} profileImage={hero.profileImages} />
         </Container>
       </section>
       <section className="py-20 lg:py-20">
+        <Container>
+          <div className="mb-10 text-center">
+            <h2 className="md:text-4xl font-bold text-xl font-mono">My Skills</h2>
+            <p className="mt-2 text-muted-foreground">
+              Technologies and tools I use to build modern web applications.
+            </p>
+          </div>
+          <Skills skill={skills} />
+        </Container>
+      </section>
+      <section id="skills" className="py-20 lg:py-20">
         <Container>
           <Project project={project} />
         </Container>

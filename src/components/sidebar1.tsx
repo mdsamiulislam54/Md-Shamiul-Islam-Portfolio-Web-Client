@@ -92,10 +92,16 @@ const sidebarData: SidebarData = {
           href: "/admin/about",
           isActive: true,
         },
-     
-       
- 
-  
+        {
+          label: "Skills",
+          icon: LayoutDashboard,
+          href: "/admin/skill",
+          isActive: true,
+        },
+
+
+
+
       ],
     },
   ],

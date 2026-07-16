@@ -40,7 +40,7 @@ const ProjectTable = ({ data }: IProjectTableProps) => {
     const router = useRouter()
 
     const update = (id: string) => {
-        router.push(`/admin/update_project/${id}`);
+        router.push(`/admin/edit/${id}`);
     };
 
 

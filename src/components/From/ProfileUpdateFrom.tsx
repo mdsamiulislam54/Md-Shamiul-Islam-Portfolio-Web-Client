@@ -8,7 +8,7 @@ import { Label } from "../ui/label";
 import { toast } from "sonner";
 import Image from "next/image";
 interface IProfileFormData {
-    id: string
+    id: string;
     fullName: string;
     title: string;
     subtitle: string;

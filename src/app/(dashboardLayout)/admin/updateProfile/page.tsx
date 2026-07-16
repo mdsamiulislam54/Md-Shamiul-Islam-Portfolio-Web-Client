@@ -8,7 +8,7 @@ const UpdateProfile = async () => {
     return (
         <Card className='p-2'>
             <h1 className='text-2xl font-bold font-mono pb-4 border-b-2'>Update Profile</h1>
-            <ProfileUpdateForm data={res.data} />
+            <ProfileUpdateForm data={res} />
         </Card>
     )
 }
