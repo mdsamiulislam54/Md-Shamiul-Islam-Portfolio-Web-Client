@@ -1,10 +1,12 @@
 import Service from '@/components/layout/Service'
-import { Badge } from 'lucide-react'
+import { Container } from '@/components/provider/container'
+import { Badge } from '@/components/ui/badge'
+
 
 const ServicePage = () => {
   return (
     <div>
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-background via-background to-primary/5 px-8 py-2 ">
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-background via-background to-primary/20 px-8 py-2 ">
 
         {/* Glow */}
         <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />
@@ -32,9 +34,9 @@ const ServicePage = () => {
         </div>
 
       </section>
-      <div>
+      <Container>
         <Service />
-      </div>
+      </Container>
     </div>
   )
 }

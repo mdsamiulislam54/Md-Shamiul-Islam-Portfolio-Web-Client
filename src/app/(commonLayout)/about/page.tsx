@@ -103,7 +103,7 @@ export default async function AboutPage() {
 
     return (
         <section className="min-h-screen">
-            <section className="relative overflow-hidden rounded-3xl  bg-gradient-to-br from-background via-background to-primary/5 px-8 py-2  mb-4">
+            <section className="relative overflow-hidden rounded-3xl  bg-gradient-to-br from-background via-background to-primary/20 px-8 py-2  mb-4">
 
                 {/* Glow */}
                 <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />

@@ -95,7 +95,7 @@ const Project = ({ project }: IProjectProps) => {
                 ))}
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-10">
                 <Button>
                     <Link href={"/project"}>
                         See More

@@ -25,7 +25,7 @@ export default async function Home() {
 
   return (
     <main>
-      <section className="overflow-hidden rounded-3xl border bg-gradient-to-br from-background via-background to-primary/50 border-none">
+      <section className="overflow-hidden rounded-3xl border bg-gradient-to-br from-background via-background to-primary/20 border-none">
         <Container>
           <HeroPage data={hero} />
         </Container>
@@ -67,7 +67,7 @@ export default async function Home() {
         </Container>
       </section>
 
-      <section className="py-10 lg:py-28">
+      <section className="py-10 lg:py-28 bg-gradient-to-br from-background via-background to-primary/20">
         <Container>
           <EducationCards />
         </Container>
