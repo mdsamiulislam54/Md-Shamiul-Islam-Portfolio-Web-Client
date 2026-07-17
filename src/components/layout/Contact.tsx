@@ -14,7 +14,7 @@ const ContactPage = ({ profile }: IContactProps) => {
     <div>
 
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="lg:text-4xl text-xl font-bold tracking-tight font-mono">
+        <h2 className="lg:text-4xl text-2xl font-bold tracking-tight font-mono">
           Get In Touch
         </h2>
 
@@ -98,31 +98,31 @@ const ContactPage = ({ profile }: IContactProps) => {
             <div>
               <h3 className="mb-4 font-semibold font-mono">Connect with Me</h3>
 
-              <div className="flex flex-wrap gap-4">
+              <div className=" grid grid-cols-3 gap-4">
                 <Link
                   href={profile.github}
                   target="_blank"
-                  className="flex items-center gap-2 rounded-lg border px-4 py-3 transition hover:border-primary hover:text-primary"
+                  className="flex items-center gap-2 rounded-lg border px-4 py-3 transition hover:border-primary hover:text-primary max-sm:text-xs"
                 >
-                  <FaGithub className="h-5 w-5" />
+                  <FaGithub className="sm:h-4 h-2 sm:w-4 w-2" />
                   GitHub
                 </Link>
 
                 <Link
                   href={profile.linkedin}
                   target="_blank"
-                  className="flex items-center gap-2 rounded-lg border px-4 py-3 transition hover:border-primary hover:text-primary"
+                  className="flex max-sm:text-xs items-center gap-2 rounded-lg border px-4 py-3 transition hover:border-primary hover:text-primary"
                 >
-                  <FaLinkedin className="h-5 w-5" />
+                  <FaLinkedin className="sm:h-4 h-2 sm:w-4 w-2" />
                   LinkedIn
                 </Link>
 
                 <Link
                   href={profile.facebook}
                   target="_blank"
-                  className="flex items-center gap-2 rounded-lg border px-4 py-3 transition hover:border-primary hover:text-primary"
+                  className="flex max-sm:text-xs items-center gap-2 rounded-lg border px-4 py-3 transition hover:border-primary hover:text-primary"
                 >
-                  <FaFacebook className="h-5 w-5" />
+                  <FaFacebook className="sm:h-5 h-4 sm:w-5 w-4" />
                   Facebook
                 </Link>
               </div>

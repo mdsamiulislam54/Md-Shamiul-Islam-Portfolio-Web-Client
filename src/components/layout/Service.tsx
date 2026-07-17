@@ -71,11 +71,11 @@ const Service = () => {
                   <Icon className="h-7 w-7" />
                 </div>
 
-                <CardTitle>{service.title}</CardTitle>
+                <CardTitle className="font-mono">{service.title}</CardTitle>
               </CardHeader>
 
               <CardContent>
-                <p className="text-sm leading-7 text-muted-foreground">
+                <p className="text-sm leading-6 text-muted-foreground">
                   {service.description}
                 </p>
               </CardContent>

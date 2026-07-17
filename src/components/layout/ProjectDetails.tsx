@@ -27,15 +27,15 @@ const ProjectDetails = async ({ projectId }: IProjectDetails) => {
                         className="object-center w-full"
                     />
 
-                    <div className="flex flex-wrap gap-4 mt-10">
+                    <div className="grid grid-cols-3 gap-2 mt-10">
 
                         <Button >
                             <Link
                                 href={project.liveUrl}
                                 target="_blank"
-                                className="flex"
+                                className="flex max-sm:text-xs"
                             >
-                                <ExternalLink className="mr-2 h-4 w-4" />
+                                <ExternalLink className="mr-2 sm:h-4 h-2 sm:w-4 w-2" />
                                 Live Demo
                             </Link>
                         </Button>
@@ -47,9 +47,9 @@ const ProjectDetails = async ({ projectId }: IProjectDetails) => {
                             <Link
                                 href={project.clientRepo}
                                 target="_blank"
-                                 className="flex"
+                                 className="flex max-sm:text-xs"
                             >
-                                <SiGithub className="mr-2 h-4 w-4" />
+                                <SiGithub className="mr-2 sm:h-4 h-2 sm:w-4 w-2" />
                                 Client Repo
                             </Link>
                         </Button>
@@ -62,9 +62,9 @@ const ProjectDetails = async ({ projectId }: IProjectDetails) => {
                                 <Link
                                     href={project.serverRepo}
                                     target="_blank"
-                                     className="flex"
+                                     className="flex max-sm:text-xs"
                                 >
-                                    <SiGithub className="mr-2 h-4 w-4" />
+                                    <SiGithub className="mr-2 sm:h-4 h-2 sm:w-4 w-2" />
                                     Server Repo
                                 </Link>
                             </Button>

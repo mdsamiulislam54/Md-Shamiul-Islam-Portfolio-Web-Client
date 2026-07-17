@@ -36,7 +36,6 @@ const UpdateProjectForm = ({ project }: UpdateProjectFromProps) => {
     });
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        console.log(name, value)
         setFromData((prev) => {
             return {
                 ...prev,
@@ -100,12 +99,8 @@ const UpdateProjectForm = ({ project }: UpdateProjectFromProps) => {
                 body.append("thumbnail", formData.thumbnail);
             }
 
-
-            console.log(body)
-
-
             setLoading(true)
-            const res = await fetch(`http://localhost:8000/api/v1/project/${project.id}`, {
+            const res = await fetch(`https://portfolio-server-beta-smoky.vercel.app/api/v1/project/${project.id}`, {
                 method: "PATCH",
                 body: body
             })

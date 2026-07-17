@@ -17,8 +17,8 @@ const ProjectPage = async () => {
     const projects = await getAllProject()
     return (
 
-        <div className="">
-            <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-background via-background to-primary/5 px-8 py-20 mb-4">
+        <div className="min-h-screen">
+            <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-background via-background to-primary/5 px-8 py-2 mb-4">
 
                 {/* Glow */}
                 <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />
@@ -33,17 +33,14 @@ const ProjectPage = async () => {
                         Projects
                     </Badge>
 
-                    <h1 className="text-5xl md:text-5xl font-bold tracking-tight font-mono">
+                    <h1 className="text-xl md:text-3xl font-bold tracking-tight font-mono">
                         Turning Ideas Into
-                        <br />
                         Real-World Applications
                     </h1>
 
-                    <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
+                    <p className="mx-auto mt-6 max-w-2xl text-sm leading-6 text-muted-foreground">
                         Explore a collection of my full-stack and frontend projects, built with
-                        modern technologies and best development practices. Each project reflects
-                        my focus on performance, scalability, responsive design, and creating
-                        intuitive user experiences.
+                        modern technologies and best development practices.
                     </p>
 
                 </div>
@@ -56,7 +53,7 @@ const ProjectPage = async () => {
                     {projects.map((item) => (
                         <div
                             key={item.id}
-                            className="md:basis-1/2 xl:basis-1/3 my-10"
+                            className="md:basis-1/2 xl:basis-1/3 my-5"
                         >
                             <Card className="group overflow-hidden rounded-2xl  transition-all duration-300 hover:cursor-pointer shadow-2xl  p-0 ">
                                 <div className="relative aspect-video overflow-hidden ">
@@ -98,10 +95,10 @@ const ProjectPage = async () => {
 
                                         <Dialog>
                                             <DialogTrigger>
-                                                <Button variant={"outline"} size="sm" className="flex-1 cursor-pointer ">
+                                                <div className="flex-1 hover:bg-secondary transition-colors duration-300 p-1 flex gap-2 border cursor-pointer ">
                                                     <ArrowUpRight className="ml-2 h-4 w-4" />
                                                     Details
-                                                </Button>
+                                                </div>
                                             </DialogTrigger>
 
                                             <DialogContent className="!max-w-6xl !w-[95vw] !max-h-[90vh] overflow-y-auto p-0">

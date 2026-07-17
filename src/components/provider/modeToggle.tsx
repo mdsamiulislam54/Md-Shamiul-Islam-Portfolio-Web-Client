@@ -20,14 +20,14 @@ export function ModeToggle() {
           <span className="sr-only">Toggle theme</span>
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+      <DropdownMenuContent align="end" className={"font-mono text-center"}>
+        <DropdownMenuItem className={"hover:text-primary cursor-pointer transition-colors duration-300"} onClick={() => setTheme("light")}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem className={"hover:text-primary cursor-pointer transition-colors duration-300"} onClick={() => setTheme("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem className={"hover:text-primary cursor-pointer transition-colors duration-300"} onClick={() => setTheme("system")}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

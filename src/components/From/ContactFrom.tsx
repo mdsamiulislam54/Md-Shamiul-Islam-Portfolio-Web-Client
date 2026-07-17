@@ -55,7 +55,7 @@ const ContactFrom = () => {
 
 
   return (
-    <div className="rounded-2xl border bg-card p-8 shadow-sm h-full">
+    <div className="rounded-2xl border bg-card sm:p-8 p-4 shadow-sm h-full">
       <div className="mb-8">
         <h2 className="text-2xl font-bold">Send a Message</h2>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -64,7 +64,7 @@ const ContactFrom = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid md:grid-cols-2 gap-2">
+        <div className="grid md:grid-cols-2 gap-4">
           <Field>
             <Label htmlFor="name">Full Name</Label>
             <Input
@@ -74,7 +74,7 @@ const ContactFrom = () => {
               autoComplete="name"
               placeholder="Enter Your Name..."
               value={formData.name}
-              className="py-6  border-b-primary "
+              className="py-6  border-b-primary  "
               onChange={handleChange}
               required
             />

@@ -99,16 +99,15 @@ const ProfileUpdateForm = ({ data }: IProfileProps) => {
             if (formData.file) {
                 body.append("file", formData.file);
             }
-            console.log(body)
+         
             setLoading(true)
-            const res = await fetch(`http://localhost:8000/api/v1/hero/${data.id}`, {
+            const res = await fetch(`https://portfolio-server-beta-smoky.vercel.app/api/v1/hero/${data.id}`, {
                 method: "PATCH",
                 body: body
             })
             const result = await res.json();
 
-            console.log(res.status);
-            console.log(result);
+          
             toast.success("Profile Update Successful")
 
         } catch (error) {
@@ -117,7 +116,7 @@ const ProfileUpdateForm = ({ data }: IProfileProps) => {
         } finally {
             setLoading(false)
         }
-        console.log(formData)
+    
     }
 
     return (

@@ -1,4 +1,4 @@
-"use client";
+
 
 import { IDashboardOverview } from "@/app/(dashboardLayout)/admin/profile/_action";
 import {

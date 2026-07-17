@@ -1,15 +1,7 @@
-"use client";
+import { Container } from '@/components/provider/container';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
-import Link from "next/link";
-import {
-    GraduationCap,
-    Calendar,
-    Building2,
-    ExternalLink,
-} from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
     Card,
     CardHeader,
@@ -18,14 +10,10 @@ import {
     CardContent,
     CardFooter,
 } from "@/components/ui/card";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
-export default function EducationCards() {
+import { Building2, Calendar, ExternalLink, GraduationCap } from 'lucide-react';
+import Link from 'next/link';
+
+const EducationPage = () => {
     const cards = [
         {
             id: 1,
@@ -71,30 +59,43 @@ export default function EducationCards() {
         },
 
     ];
-
     return (
-        <div >
-            <div className="mx-auto max-w-3xl text-center mb-14">
-                <h2 className="lg:text-4xl text-2xl font-bold tracking-tight font-mono">
-                    Education & Training
-                </h2>
+        <div className='min-h-screen'>
+            <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-background via-background to-primary/5 px-8 py-2 mb-4">
 
-                <p className="mt-4 text-muted-foreground max-lg:text-sm">
-                    My academic background, professional training, and development
-                    journey.
-                </p>
-            </div>
+                {/* Glow */}
+                <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />
+                <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />
 
-            <Carousel
-                opts={{
-                    align: "start",
-                    loop: true,
-                }}
-                className=" w-full"
-            >
-                <CarouselContent className="-ml-4 mb-4">
+                {/* Grid Background */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+
+                <div className="relative z-10 text-center">
+
+                    <Badge className="mb-5">
+                        Education
+                    </Badge>
+
+                    <h1 className="text-xl md:text-3xl font-bold tracking-tight font-mono">
+                        Building Knowledge,
+                        One Milestone at a Time
+                    </h1>
+
+                    <p className="mx-auto mt-6 max-w-2xl text-sm leading-6 text-muted-foreground">
+                        My academic journey, professional training, and certifications have
+                        provided a solid foundation in computer science, software development,
+                        and modern web technologies, empowering me to build practical and
+                        scalable digital solutions.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <Container>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {cards.map((card) => (
-                        <CarouselItem
+                        <div
                             key={card.id}
                             className="pl-4 basis-full md:basis-1/2 xl:basis-1/3 "
                         >
@@ -150,13 +151,12 @@ export default function EducationCards() {
                                     )}
                                 </CardFooter>
                             </Card>
-                        </CarouselItem>
+                        </div>
                     ))}
-                </CarouselContent>
-
-                <CarouselPrevious className="-left-5" />
-                <CarouselNext className="-right-5" />
-            </Carousel>
+                </div>
+            </Container>
         </div>
-    );
+    )
 }
+
+export default EducationPage

@@ -1,5 +1,6 @@
 import axios from "axios";
-const url = process.env.BASE_URL || "http://localhost:8000/api/v1"
+
+const url = process.env.NEXT_PUBLIC_API_BASE_URL 
 
 const httpClient = axios.create({
     baseURL: url,

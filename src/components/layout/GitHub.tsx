@@ -1,11 +1,9 @@
-"use client"
+
 import { GitHubCalendar, } from "react-github-calendar";
 
 import {
     Card,
     CardContent,
-    CardHeader,
-    CardTitle,
 } from "@/components/ui/card";
 const GitHub = () => {
     return (

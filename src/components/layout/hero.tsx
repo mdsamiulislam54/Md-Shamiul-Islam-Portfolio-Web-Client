@@ -59,24 +59,26 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                         {data.title.split(".")[0]}
                     </h3>
 
-                    <h3 className="max-md:text-[1vw] text-2xl font-mono font-medium ">
+                    <h3 className="max-md:text-[1vw] text-2xl font-mono font-medium text-primary">
                         <Typewriter
+                        
                             options={{
-                                strings: [data.title.split(".")[1], "Frontend Web Developer", "Backend Developer"],
+                                strings: [data.title.split(".")[1], "Frontend Web Developer", "Backend Developer","Full Stack Developer"],
                                 autoStart: true,
                                 loop: true,
+                                
                             }}
                         />
                     </h3>
 
-                    <h2 className="text-sm   text-muted-foreground sm:text-md">
+                    <h2 className="text-sm max-sm:text-center text-muted-foreground sm:text-md">
                         {data.subtitle}
                     </h2>
 
                     <div className="flex flex-wrap items-center justify-center gap-4 pt-4 lg:justify-start">
                         <Button size="lg" className="rounded-xl px-8 cursor-pointer">
                             <Download className="mr-2 h-4 w-4" />
-                            <Link href={data.resumeUrl} target="_blank">Download CV</Link>
+                            <Link href={data.resumeUrl} target="_blank">Resume</Link>
                         </Button>
 
                         <Button
@@ -84,7 +86,9 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                             variant="outline"
                             className="rounded-xl px-8"
                         >
-                            View Projects
+                            <Link href={"/project"}>
+                                View Projects
+                            </Link>
                         </Button>
                     </div>
                     <div className=" absolute lg:top-[50%] top-[25%] translate-y-[-50%] right-0 overflow-hidden z-20 ">
@@ -98,7 +102,7 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                                         href={item.href}
                                         target="_blank"
 
-                                        className="flex h-12 w-12 items-center justify-center rounded-full border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-primary-foreground cursor-pointer animate-pulse"
+                                        className="flex md:h-12 h-8 w-8 md:w-12 items-center justify-center rounded-full border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-primary-foreground cursor-pointer animate-pulse"
                                     >
                                         <Icon className="text-xl" />
                                     </Link>
@@ -113,12 +117,15 @@ const HeroPage = ({ data }: { data: IProfileProps }) => {
                     {/* Background Blur */}
 
 
-                    <div className="relative w-100 h-100 max-lg:overflow-hidden">
+                    <div className="relative md:w-100 w-70 h-70  md:h-100 ">
                         <Image
                             src={data.profileImages}
                             alt={data.fullName}
-                            width={400}
-                            height={400}
+                            sizes="(max-width: 640px) 100px,
+                                     (max-width: 768px) 256px,
+                                    (max-width: 1024px) 288px,
+                                                     384px"
+                            fill
                             className="w-full h-full rounded-full object-cover"
                         />
 

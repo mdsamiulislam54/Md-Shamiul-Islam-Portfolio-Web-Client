@@ -37,7 +37,7 @@ const UpdateAboutFrom = ({ about }: UpdateAboutProps) => {
 
             setLoading(true)
             const res = await aboutUpdate(about.id, formData)
-            console.log(res)
+           
             if (res.success) {
                 toast.success(res.message)
 

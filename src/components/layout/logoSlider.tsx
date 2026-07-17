@@ -71,7 +71,7 @@ const LogoSlider = () => {
 
     ];
     return (
-        <div className='relative overflow-hidden py-10'>
+        <div className='relative overflow-hidden pb-10'>
             <div className='flex w-max animate-marquee gap-6'>
                 {
                     [...technologies, ...technologies].map((item, index) => {

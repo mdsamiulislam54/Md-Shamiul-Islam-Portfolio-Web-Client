@@ -21,11 +21,11 @@ const Project = ({ project }: IProjectProps) => {
 
         <div className="">
             <div className="mb-6 text-center">
-                <h2 className="lg:text-4xl text-xl font-bold font-mono">
+                <h2 className="lg:text-4xl text-2xl font-bold font-mono">
                     Featured Projects
                 </h2>
 
-                <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+                <p className="text-muted-foreground mt-3 text-sm max-w-2xl mx-auto">
                     Some of my recent full stack projects built using
                     modern technologies.
                 </p>
@@ -36,7 +36,7 @@ const Project = ({ project }: IProjectProps) => {
                 {project.slice(0, 3).map((item) => (
                     <div
                         key={item.id}
-                        className="md:basis-1/2 xl:basis-1/3 my-10"
+                        className=""
                     >
                         <Card className="group overflow-hidden rounded-2xl  transition-all duration-300 hover:cursor-pointer shadow-2xl  p-0 ">
                             <div className="relative aspect-video overflow-hidden ">

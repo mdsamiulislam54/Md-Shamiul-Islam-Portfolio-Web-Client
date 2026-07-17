@@ -102,7 +102,7 @@ export default async function AboutPage() {
     const about = await getAbout();
 
     return (
-        <section className="">
+        <section className="min-h-screen">
             <section className="relative overflow-hidden rounded-3xl  bg-gradient-to-br from-background via-background to-primary/5 px-8 py-2  mb-4">
 
                 {/* Glow */}

@@ -25,6 +25,6 @@ export const createMessage = async (payload: IMessage) => {
         return res.data;
     } catch (error) {
         console.log(error);
-        throw new Error("Create Messages failed");
+        throw error
     }
 };
