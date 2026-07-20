@@ -2,7 +2,7 @@
 import { getAbout } from "@/app/(dashboardLayout)/admin/about/_actions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CalendarDays, Code2, Briefcase } from "lucide-react";
+import { CalendarDays, Code2 } from "lucide-react";
 import { Container } from "@/components/provider/container";
 import {
     RiNextjsFill,
@@ -95,9 +95,6 @@ const timeline = [
     { year: "2025", title: "Programming Hero Complete Web Development" },
     { year: "2026", title: "Next Level Web Development" },
 ];
-
-
-
 
 export default async function AboutPage() {
     const about = await getAbout();

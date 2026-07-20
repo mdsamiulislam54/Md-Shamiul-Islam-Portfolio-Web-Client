@@ -29,7 +29,7 @@ const CreateProjectForm = () => {
     });
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        console.log(name, value)
+        
         setFromData((prev) => {
             return {
                 ...prev,
@@ -94,7 +94,7 @@ const CreateProjectForm = () => {
             }
 
 
-            console.log(body)
+    
 
 
             setLoading(true)

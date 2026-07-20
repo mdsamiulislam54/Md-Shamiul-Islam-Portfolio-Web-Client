@@ -10,7 +10,7 @@ import {
     Star,
 } from "lucide-react";
 
-import { IProjectPayload } from "@/app/(dashboardLayout)/admin/project/_actions";
+import { deleteProjectById, IProjectPayload } from "@/app/(dashboardLayout)/admin/project/_actions";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -30,13 +30,17 @@ import {
 } from "@/components/ui/table";
 import { SiGithub } from "react-icons/si";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Dialog, DialogContent, DialogHeader } from "../ui/dialog";
 
 interface IProjectTableProps {
     data: IProjectPayload[];
 }
 
 const ProjectTable = ({ data }: IProjectTableProps) => {
-
+    const [open, setOpen] = useState(false);
+    const [selectedId, setSelectedId] = useState<string | null>(null);
     const router = useRouter()
 
     const update = (id: string) => {
@@ -44,6 +48,16 @@ const ProjectTable = ({ data }: IProjectTableProps) => {
     };
 
 
+    const handleDelete = async (id: string) => {
+        try {
+            await deleteProjectById(id);
+            toast.success("Project deleted successfully");
+            router.refresh();
+        } catch (error) {
+            console.error(error);
+            toast.error("Project delete failed");
+        }
+    };
 
 
     return (
@@ -138,9 +152,9 @@ const ProjectTable = ({ data }: IProjectTableProps) => {
                             <TableCell className="text-right">
                                 <DropdownMenu>
                                     <DropdownMenuTrigger>
-                                        <Button variant="ghost" size="icon">
+                                        <span className="p-2">
                                             <MoreHorizontal className="h-5 w-5" />
-                                        </Button>
+                                        </span>
                                     </DropdownMenuTrigger>
 
                                     <DropdownMenuContent align="end">
@@ -149,7 +163,12 @@ const ProjectTable = ({ data }: IProjectTableProps) => {
                                             Update
                                         </DropdownMenuItem>
 
-                                        <DropdownMenuItem className="text-red-500 focus:text-red-500">
+                                        <DropdownMenuItem
+                                            onClick={() => {
+                                                setSelectedId(project.id);
+                                                setOpen(true);
+                                            }}
+                                            className="text-red-500 focus:text-red-500">
                                             <Trash2 className="mr-2 h-4 w-4" />
                                             Delete
                                         </DropdownMenuItem>
@@ -171,6 +190,43 @@ const ProjectTable = ({ data }: IProjectTableProps) => {
                     )}
                 </TableBody>
             </Table>
+
+
+            <Dialog open={open} onOpenChange={setOpen}>
+                <DialogContent>
+                    <DialogHeader>
+                        <h2 className="text-lg font-semibold">
+                            Delete Project?
+                        </h2>
+                    </DialogHeader>
+
+                    <p>
+                        Are you sure you want to delete this project? This action cannot be undone.
+                    </p>
+
+                    <div className="flex justify-end gap-3 mt-5">
+                        <span
+                            className="p-2 shadow border cursor-pointer"
+                            onClick={() => setOpen(false)}
+                        >
+                            Cancel
+                        </span>
+
+                        <span
+                             className="p-2 shadow border cursor-pointer"
+                            onClick={async () => {
+                                if (!selectedId) return;
+
+                                await handleDelete(selectedId);
+                                setOpen(false);
+                                setSelectedId(null);
+                            }}
+                        >
+                            Delete
+                        </span>
+                    </div>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 };

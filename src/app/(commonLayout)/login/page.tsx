@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { login } from "./_actions";
 
 const LoginPage = () => {
-  const [code, setCode] = useState(["5", "4", "9", "0", "3", "7"]);
+  const [code, setCode] = useState(["5", "4", "9", "0", "", ""]);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const handleChange = (value: string, index: number) => {

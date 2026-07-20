@@ -1,7 +1,7 @@
 "use server"
 
 import httpClient from "@/config/axios";
-
+import { revalidatePath } from "next/cache";
 export interface IProjectPayload {
     id: string
     name: string;
@@ -47,6 +47,16 @@ export const getProjectByID = async (id:string) => {
     try {
         const res = await httpClient.get(`/project/${id}`)
         return res.data.data as IProjectUpdatePayload
+    } catch (error) {
+        console.log(error)
+        throw error
+    }
+}
+export const deleteProjectById = async (id:string) => {
+    try {
+        const res = await httpClient.delete(`/project/${id}`)
+          revalidatePath("/admin/project");
+        return res.data
     } catch (error) {
         console.log(error)
         throw error
