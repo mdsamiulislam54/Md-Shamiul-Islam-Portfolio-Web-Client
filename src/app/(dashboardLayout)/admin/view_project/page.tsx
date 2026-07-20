@@ -5,7 +5,6 @@ import ProjectTable from '@/components/Table/ProjectTable'
 const ViewProjectPage = async () => {
     const projects = await getAllProject();
 
-    console.log(projects)
     return (
         <div>
             <ProjectTable data={projects}/>

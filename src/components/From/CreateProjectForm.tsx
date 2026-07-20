@@ -98,7 +98,7 @@ const CreateProjectForm = () => {
 
 
             setLoading(true)
-            const res = await fetch(`https://portfolio-server-beta-smoky.vercel.app/api/v1/project`, {
+            const res = await fetch(`http://localhost:8000/api/v1/project`, {
                 method: "POST",
                 body: body
             })

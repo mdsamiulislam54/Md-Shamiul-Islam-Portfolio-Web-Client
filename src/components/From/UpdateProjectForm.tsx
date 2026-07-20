@@ -99,8 +99,8 @@ const UpdateProjectForm = ({ project }: UpdateProjectFromProps) => {
                 body.append("thumbnail", formData.thumbnail);
             }
 
-            setLoading(true)
-            const res = await fetch(`https://portfolio-server-beta-smoky.vercel.app/api/v1/project/${project.id}`, {
+            setLoading(true);
+            const res = await fetch(`http://localhost:8000/api/v1/project/${project.id}`, {
                 method: "PATCH",
                 body: body
             })
@@ -123,10 +123,10 @@ const UpdateProjectForm = ({ project }: UpdateProjectFromProps) => {
     };
 
     return (
-        <Card className="max-w-6xl mx-auto">
+        <Card className=" py-4 mx-auto">
 
             <CardHeader>
-                <CardTitle>Create Project</CardTitle>
+                <CardTitle>Update Project</CardTitle>
             </CardHeader>
 
             <CardContent>

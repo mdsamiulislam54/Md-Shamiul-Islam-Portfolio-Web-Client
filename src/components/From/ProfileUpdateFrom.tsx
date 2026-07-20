@@ -101,7 +101,7 @@ const ProfileUpdateForm = ({ data }: IProfileProps) => {
             }
          
             setLoading(true)
-            const res = await fetch(`https://portfolio-server-beta-smoky.vercel.app/api/v1/hero/${data.id}`, {
+            const res = await fetch(`http://localhost:8000/api/v1/hero/${data.id}`, {
                 method: "PATCH",
                 body: body
             })

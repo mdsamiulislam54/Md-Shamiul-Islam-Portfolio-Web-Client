@@ -7,7 +7,7 @@ const UpdateProjectPage = async ({ params, }: { params: Promise<{ id: string }>;
     const project = await getProjectByID(id as string)
 
     return (
-        <div>
+        <div className='py-4'>
             <h1 className='text-2xl font-bold font-mono pb-4 border-b-2'>Update Profile</h1>
             <UpdateProjectForm project={project} />
         </div>
