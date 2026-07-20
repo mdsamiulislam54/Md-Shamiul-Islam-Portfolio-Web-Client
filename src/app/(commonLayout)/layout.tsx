@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/Footer";
 import { getProfileData } from "../(dashboardLayout)/admin/profile/_action";
+import SmoothScroll from "@/components/provider/lenis";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat-sans",
@@ -35,15 +35,15 @@ export default async function CommonLayout({
   const profile = await getProfileData()
 
   return (
-   
 
-      <div className={`${montserrat.variable} ${inter.variable} ${geistMono.variable} bg-background text-foreground`}>
+
+    <div className={`${montserrat.variable} ${inter.variable} ${geistMono.variable} bg-background text-foreground`}>
+      <SmoothScroll/>
+        <Navbar resumeUrl={profile.resumeUrl} />
+        {children}
+        <Footer />
      
-          <Navbar resumeUrl={profile.resumeUrl}/>
-          {children}
-          <Footer/>
-       
-      </div>
+    </div>
 
   );
 }
